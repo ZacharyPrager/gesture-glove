@@ -9,14 +9,3 @@ This project is a wearable gesture-control system built from the ground up using
 Multiple **MPU6050 accelerometer/gyroscope sensors** capture hand movement. The STM32 reads and processes the sensor data, then converts the detected motion into mouse input.
 
 The goal is to create a low-level, real-time human-computer interface without relying on an RTOS or high-level embedded framework.
-
-## System Architecture
-
-```mermaid
-flowchart LR
-    A["Hand / Finger Movement"] --> B["MPU6050 IMU Sensors"]
-    B -->|"I²C"| C["STM32"]
-    C --> D["Sensor Data Processing"]
-    D --> E["Motion → Cursor Mapping"]
-    E --> F["Mouse Input"]
-    F --> G["Computer Cursor"]
